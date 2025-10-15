@@ -1,8 +1,8 @@
 # My Portfolio
 ## Personal Information
 **Name:** Tanul Vishwakarma
-**Address:** Jharkhand
-**Location:** San Francisco, CA 94102, USA
+**Address:** Jharkhand, India
+**Location:** Jharkhand, India
 **Portfolio:** https://tnuislostq.github.io/my-portfolio
 ## Professional Summary
 Experienced software developer with a passion for creating innovative solutions and building user-friendly applications.
