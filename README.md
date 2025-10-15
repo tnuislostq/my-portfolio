@@ -1,7 +1,7 @@
 # My Portfolio
 ## Personal Information
-**Name:** John Doe
-**Address:** 123 Main Street, Apartment 4B
+**Name:** Tanul Vishwakarma
+**Address:** Jharkhand
 **Location:** San Francisco, CA 94102, USA
 **Portfolio:** https://tnuislostq.github.io/my-portfolio
 ## Professional Summary
