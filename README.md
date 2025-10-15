@@ -1,6 +1,6 @@
 # My Portfolio
 ## Personal Information
-**Name:** Tanul
+**Name:** Tanu Vishwakarma
 **Address:** Jharkhand, India
 **Portfolio:** https://tnuislostq.github.io/my-portfolio
 ## Professional Summary
