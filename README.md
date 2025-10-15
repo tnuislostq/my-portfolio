@@ -1,6 +1,6 @@
 # My Portfolio
 ## Personal Information
-**Name:** Tanul Vishwakarma
+**Name:** Tanul
 **Address:** Jharkhand, India
 **Portfolio:** https://tnuislostq.github.io/my-portfolio
 ## Professional Summary
@@ -25,3 +25,8 @@ Experienced software developer with a passion for creating innovative solutions 
 - MongoDB
 - PostgreSQL
 ### Soft Skills
+- Problem-solving
+- Team collaboration
+- Communication
+- Time management
+- Adaptability
