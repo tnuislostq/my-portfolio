@@ -2,7 +2,6 @@
 ## Personal Information
 **Name:** Tanul Vishwakarma
 **Address:** Jharkhand, India
-**Location:** Jharkhand, India
 **Portfolio:** https://tnuislostq.github.io/my-portfolio
 ## Professional Summary
 Experienced software developer with a passion for creating innovative solutions and building user-friendly applications.
