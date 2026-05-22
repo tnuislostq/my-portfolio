@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tanu Kumari Vishwakarma — MERN Full Stack Developer</title>
+<meta name="description" content="MERN Full Stack Developer passionate about turning ideas into reality and building scalable web applications.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --navy: #0F4C75;
+    --navy-light: #1B6CA8;
+    --navy-pale: #E8F1F8;
+    --navy-dark: #082C47;
+    --text: #1A1A2E;
+    --text-mid: #4A5568;
+    --text-light: #8896A5;
+    --bg: #FAFBFC;
+    --bg-card: #FFFFFF;
+    --border: rgba(15,76,117,0.12);
+    --border-hover: rgba(15,76,117,0.35);
+  }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(250,251,252,0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+    padding: 0 2.5rem;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 20px;
+    color: var(--text);
+    letter-spacing: -0.3px;
+  }
+  .logo span { color: var(--navy); }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-mid);
+    text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--navy); }
+
+  /* ── HERO ── */
+  .hero {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 6rem 2.5rem 5rem;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--navy);
+    background: var(--navy-pale);
+    border: 1px solid rgba(15,76,117,0.18);
+    padding: 5px 14px;
+    border-radius: 100px;
+    margin-bottom: 2rem;
+    animation: fadeUp 0.5s ease both;
+  }
+  .badge-dot {
+    width: 7px; height: 7px;
+    background: #22c55e;
+    border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .hero h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 6vw, 64px);
+    font-weight: 400;
+    line-height: 1.08;
+    letter-spacing: -1.5px;
+    margin-bottom: 1.5rem;
+    animation: fadeUp 0.5s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--navy);
+  }
+
+  .hero-desc {
+    font-size: 18px;
+    color: var(--text-mid);
+    max-width: 540px;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+    animation: fadeUp 0.5s 0.2s ease both;
+  }
+
+  .hero-actions {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 3.5rem;
+    animation: fadeUp 0.5s 0.3s ease both;
+  }
+
+  .btn-primary {
+    background: var(--navy);
+    color: #fff;
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .btn-primary:hover { background: var(--navy-dark); transform: translateY(-1px); }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    padding: 11px 24px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+    font-family: 'DM Sans', sans-serif;
+    border: 1px solid var(--border-hover);
+    transition: border-color 0.2s, transform 0.15s;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .btn-outline:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-1px); }
+
+  .hero-stats {
+    display: flex;
+    gap: 3rem;
+    padding-top: 3rem;
+    border-top: 1px solid var(--border);
+    flex-wrap: wrap;
+    animation: fadeUp 0.5s 0.4s ease both;
+  }
+  .stat-num {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    color: var(--navy);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 13px;
+    color: var(--text-light);
+    margin-top: 4px;
+    font-weight: 400;
+  }
+
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(18px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── SECTIONS ── */
+  .section-wrap {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 4rem 2.5rem;
+  }
+
+  .section-eyebrow {
+    font-size: 11px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+
+  .section-heading {
+    font-family: 'DM Serif Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    letter-spacing: -0.8px;
+    margin-bottom: 2.5rem;
+    color: var(--text);
+  }
+
+  hr.divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  /* ── SKILLS ── */
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+  }
+
+  .skill-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.3rem 1.4rem;
+    transition: border-color 0.2s, transform 0.2s;
+  }
+  .skill-card:hover {
+    border-color: var(--navy-light);
+    transform: translateY(-2px);
+  }
+
+  .skill-icon {
+    font-size: 20px;
+    margin-bottom: 12px;
+    display: block;
+    width: 38px; height: 38px;
+    background: var(--navy-pale);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--navy);
+    margin-bottom: 14px;
+  }
+
+  .skill-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+  }
+
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+  }
+  .tag {
+    font-size: 11px;
+    background: var(--navy-pale);
+    color: var(--navy-dark);
+    padding: 3px 9px;
+    border-radius: 100px;
+    font-weight: 400;
+  }
+
+  /* ── PROJECTS ── */
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+  }
+
+  .proj-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    transition: border-color 0.2s, transform 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+  .proj-card:hover {
+    border-color: var(--navy);
+    transform: translateY(-3px);
+  }
+
+  .proj-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .proj-badge {
+    font-size: 11px;
+    font-weight: 500;
+    background: var(--navy-pale);
+    color: var(--navy-dark);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+
+  .proj-stars {
+    font-size: 12px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .proj-stars svg { width: 13px; height: 13px; fill: #f59e0b; }
+
+  .proj-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 18px;
+    font-weight: 400;
+    color: var(--text);
+    letter-spacing: -0.2px;
+  }
+
+  .proj-desc {
+    font-size: 13.5px;
+    color: var(--text-mid);
+    line-height: 1.65;
+    font-weight: 300;
+    flex: 1;
+  }
+
+  .proj-footer {
+    display: flex;
+    gap: 12px;
+    padding-top: 12px;
+    border-top: 1px solid var(--border);
+    margin-top: auto;
+  }
+
+  .proj-link {
+    font-size: 12px;
+    color: var(--navy);
+    text-decoration: none;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    transition: opacity 0.2s;
+  }
+  .proj-link:hover { opacity: 0.7; }
+  .proj-link svg { width: 13px; height: 13px; }
+
+  /* ── CONTACT ── */
+  .contact-box {
+    background: var(--navy);
+    border-radius: 20px;
+    padding: 4rem 3rem;
+    text-align: center;
+    color: #fff;
+  }
+
+  .contact-box h2 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: -1px;
+    margin-bottom: 1rem;
+    color: #fff;
+  }
+
+  .contact-box p {
+    font-size: 16px;
+    color: rgba(255,255,255,0.7);
+    max-width: 400px;
+    margin: 0 auto 2.5rem;
+    font-weight: 300;
+    line-height: 1.7;
+  }
+
+  .contact-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .contact-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 10px 18px;
+    border-radius: 8px;
+    background: rgba(255,255,255,0.12);
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid rgba(255,255,255,0.2);
+    font-family: 'DM Sans', sans-serif;
+    transition: background 0.2s;
+  }
+  .contact-btn:hover { background: rgba(255,255,255,0.22); }
+  .contact-btn svg { width: 16px; height: 16px; }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 13px;
+    color: var(--text-light);
+    border-top: 1px solid var(--border);
+    font-weight: 300;
+  }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 640px) {
+    nav { padding: 0 1.25rem; }
+    .nav-links { gap: 1.2rem; }
+    .hero, .section-wrap { padding-left: 1.25rem; padding-right: 1.25rem; }
+    .hero { padding-top: 3.5rem; padding-bottom: 3rem; }
+    .hero-stats { gap: 2rem; }
+    .contact-box { padding: 2.5rem 1.5rem; }
+    .contact-box h2 { font-size: 30px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo"><span>Tanu</span>.dev</div>
+  <ul class="nav-links">
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">
+    <span class="badge-dot"></span>
+    Open to internships &amp; entry-level roles
+  </div>
+
+  <h1>Hi, I'm <em>Tanu Kumari</em><br>Vishwakarma</h1>
+
+  <p class="hero-desc">
+    MERN Full Stack Developer — passionate about turning ideas into reality and building scalable web applications. Exploring DevOps, Data Science &amp; ML.
+  </p>
+
+  <div class="hero-actions">
+    <a href="#projects" class="btn-primary">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      View my projects
+    </a>
+    <a href="#contact" class="btn-outline">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+      Get in touch
+    </a>
+    <a href="https://github.com/tnuislostq" target="_blank" rel="noopener" class="btn-outline">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+      GitHub
+    </a>
+  </div>
+
+  <div class="hero-stats">
+    <div>
+      <div class="stat-num">11</div>
+      <div class="stat-label">GitHub repos</div>
+    </div>
+    <div>
+      <div class="stat-num">16</div>
+      <div class="stat-label">Stars earned</div>
+    </div>
+    <div>
+      <div class="stat-num">3+</div>
+      <div class="stat-label">Projects built</div>
+    </div>
+    <div>
+      <div class="stat-num">10+</div>
+      <div class="stat-label">Technologies</div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- SKILLS -->
+<section id="skills" class="section-wrap">
+  <p class="section-eyebrow">What I work with</p>
+  <h2 class="section-heading">Core skills</h2>
+
+  <div class="skills-grid">
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
+      </div>
+      <div class="skill-name">Frontend</div>
+      <div class="tags"><span class="tag">React</span><span class="tag">Next.js</span><span class="tag">JavaScript</span><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">Tailwind</span><span class="tag">Bootstrap</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+      </div>
+      <div class="skill-name">Backend</div>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">Django</span><span class="tag">REST APIs</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></svg>
+      </div>
+      <div class="skill-name">Databases</div>
+      <div class="tags"><span class="tag">MongoDB</span><span class="tag">MySQL</span><span class="tag">Firebase</span><span class="tag">SQL</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93a10 10 0 010 14.14M4.93 4.93a10 10 0 000 14.14"/></svg>
+      </div>
+      <div class="skill-name">DevOps &amp; tools</div>
+      <div class="tags"><span class="tag">Git</span><span class="tag">GitHub</span><span class="tag">CI/CD</span><span class="tag">VS Code</span><span class="tag">Postman</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a10 10 0 100 20A10 10 0 0012 2z"/><path d="M12 8v4l3 3"/></svg>
+      </div>
+      <div class="skill-name">Data &amp; ML</div>
+      <div class="tags"><span class="tag">Python</span><span class="tag">Data Analysis</span><span class="tag">ML basics</span></div>
+    </div>
+    <div class="skill-card">
+      <div class="skill-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      </div>
+      <div class="skill-name">Other</div>
+      <div class="tags"><span class="tag">C++</span><span class="tag">DSA</span><span class="tag">Performance Opt.</span><span class="tag">Debugging</span></div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- PROJECTS -->
+<section id="projects" class="section-wrap">
+  <p class="section-eyebrow">What I've built</p>
+  <h2 class="section-heading">Projects</h2>
+
+  <div class="projects-grid">
+    <div class="proj-card">
+      <div class="proj-top">
+        <span class="proj-badge">Live</span>
+      </div>
+      <div class="proj-title">Personal Portfolio Website</div>
+      <p class="proj-desc">A fully responsive portfolio built from scratch, showcasing projects, skills and achievements with cross-device optimization.</p>
+      <div class="tags"><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span></div>
+      <div class="proj-footer">
+        <a class="proj-link" href="https://tnuislostq.github.io/my-portfolio" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          Live site
+        </a>
+        <a class="proj-link" href="https://github.com/tnuislostq/my-portfolio" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <span class="proj-badge">AI-powered</span>
+        <span class="proj-stars">
+          <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+          2 stars
+        </span>
+      </div>
+      <div class="proj-title">AI Monk Interview App</div>
+      <p class="proj-desc">An interactive philosophical conversation app integrating third-party APIs for intelligent, dynamic AI-driven dialogue.</p>
+      <div class="tags"><span class="tag">React</span><span class="tag">JavaScript</span><span class="tag">API Integration</span></div>
+      <div class="proj-footer">
+        <a class="proj-link" href="https://github.com/tnuislostq/AI-Monk-interview-app" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+
+    <div class="proj-card">
+      <div class="proj-top">
+        <span class="proj-badge">Full-stack</span>
+      </div>
+      <div class="proj-title">TUKO Chat Application</div>
+      <p class="proj-desc">An end-to-end real-time chat app built across the full stack — frontend UI, backend server logic, and database integration.</p>
+      <div class="tags"><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span><span class="tag">React</span></div>
+      <div class="proj-footer">
+        <a class="proj-link" href="https://github.com/tnuislostq/TUKO-chat-application-by-TANU" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<hr class="divider">
+
+<!-- CONTACT -->
+<section id="contact" class="section-wrap">
+  <div class="contact-box">
+    <h2>Let's work together</h2>
+    <p>Open to internships, entry-level roles, and freelance projects. Feel free to reach out!</p>
+    <div class="contact-links">
+      <a class="contact-btn" href="mailto:tanu63867@gmail.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 7l10 7 10-7"/></svg>
+        tanu63867@gmail.com
+      </a>
+      <a class="contact-btn" href="https://linkedin.com/in/tanu-vishwakarma-b904b1308" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+        LinkedIn
+      </a>
+      <a class="contact-btn" href="https://github.com/tnuislostq" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        GitHub
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  Designed &amp; built by Tanu Kumari Vishwakarma &nbsp;·&nbsp; 2025
+</footer>
+
+</body>
+</html>
